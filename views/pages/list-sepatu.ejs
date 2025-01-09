@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+ 
+<div class="container mx-auto my-10">
+  <h1 class="text-4xl font-bold mb-6 text-center">List Sepatu</h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <% sepatu.forEach(function(item) { %>
+    <div class="border p-4 rounded-lg shadow-lg bg-white">
+      <h2 class="text-xl font-semibold mb-2"><%= item.nama %></h2>
+      <p><strong>Ukuran:</strong> <%= item.ukuran %></p>
+      <p><strong>Warna Dominan:</strong> <%= item.warnaDominan %></p>
+      <p><strong>Harga:</strong> Rp <%= item.harga.toLocaleString() %></p>
+      <p><strong>Brand:</strong> <%= item.brand %></p>
+      <p><strong>Bahan:</strong> <%= item.bahan %></p>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
